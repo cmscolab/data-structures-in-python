@@ -3,11 +3,16 @@ class Stack(object):
         self.items = []
 
     def push(self, item):
-        self.items.insert(0, item)
+        self.items.append(item)
 
     def pop(self):
-        #print(self.items[0])
-        return self.items.pop(0)
+        if len(self.items) > 0:
+            return self.items.pop()
+        return None
+    def peek(self):
+        if len(self.items) > 0:
+            return self.items[-1]
+        return None
 
     def isEmpty(self):
         return len(self.items) == 0
